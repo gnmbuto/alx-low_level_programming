@@ -6,5 +6,7 @@ Task 1 - C is a compiled language
 
 Task 2 - Now the Assembly code
 
-Task 3 - 
+Task 3 - Linker to exe file 
+
+Task 4 - 
 
