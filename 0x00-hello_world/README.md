@@ -13,3 +13,9 @@ Task 4 - Puts no Printf
 Task 5 - The printf function
 
 Task 6 - Size of various types
+
+Task 7 - Intel Syntax code
+
+Task 8 - The genius that is UNIX
+
+J'ai Fini
