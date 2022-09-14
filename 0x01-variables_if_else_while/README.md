@@ -4,3 +4,4 @@ Task 1 - The last digit
 Task 2 - The alphabet game
 Task 3 - The alphaBET game
 Task 4 - Leaves q and e
+Task 5 - Base 10 printout from 0
