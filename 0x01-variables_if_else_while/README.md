@@ -8,3 +8,4 @@ Task 5 - Base 10 printout from 0
 Task 6 - Numberz base 10
 Task 7 - A program that prints alphabets in reverse
 Task 8 - BASE 16 output
+Task 9 - Combinations of single-digit numbers
