@@ -1,17 +1,15 @@
 #include "main.h"
 
 /**
-*_isdigit - checks whether a  character is a digit or not
-*@c: tested character
-*Return: 1 if it is, 0 otherwise
-*/
+ * print_alphabet - prints out the alphabet
+ * main - uses built in function
+ * Return: 0 if succesful
+ */
 
-int _isdigit(int c)
+void print_alphabet(void)
 {
-	if ((c >= 48) && (c <= 57))
-	{
-		return (1);
-	}
-
-	return (0);
+char i;
+for (i = 'a'; i <= 'z'; i++)
+_putchar(i);
+_putchar('\n');
 }
