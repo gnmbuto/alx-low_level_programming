@@ -10,3 +10,4 @@ Task 9 - Jack Bauer
 Task 9 - Learn your times table
 Task 10 - Add integers and give the result
 Task 11 - Print all the natural numbers
+Task 12 - n Times table
