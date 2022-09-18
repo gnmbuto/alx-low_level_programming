@@ -8,3 +8,4 @@ Task 6 - No absolute value
 Task 7 - The last digit of a number
 Task 9 - Jack Bauer
 Task 9 - Learn your times table
+Task 10 - Add integers and give the result
