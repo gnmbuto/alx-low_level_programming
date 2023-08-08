@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * _puts_recursion - print a string followedby a new line character
- * s- character printer to be printed and is also the parameter
+ * @s- character printer to be printed and is also the parameter
  * @gnmbuto
  */
 void _puts_recursion(char *s)
