@@ -1,84 +1,54 @@
-#include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
-/**
- * str_len -get string length
- * @s: string
- *
- * Description: return string length
- *
- * Return: length
- */
-int str_len(char *s)
-{
-        int i;
+#include <string.h>
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
+typedef struct {
+    char *name;
+    float age;
+    char *owner;
+} dog_t;
+
+dog_t *new_dog(char *name, float age, char *owner) {
+    // Allocate memory for the dog structure
+    dog_t *newDog = (dog_t *)malloc(sizeof(dog_t));
+    if (newDog == NULL) {
+        return NULL;  // Return NULL if memory allocation fails
+    }
+    
+    // Allocate memory for the name and owner strings and copy the provided strings
+    newDog->name = strdup(name);
+    newDog->owner = strdup(owner);
+    
+    // Check if memory allocation for name or owner failed
+    if (newDog->name == NULL || newDog->owner == NULL) {
+        // Free any allocated memory and return NULL if there's an error
+        free(newDog->name);
+        free(newDog->owner);
+        free(newDog);
+        return NULL;
+    }
+    
+    newDog->age = age;
+    
+    return newDog;
 }
-/**
- * str_cpy -copy char buffer
- * @src: source
- * @dest: destination
- *
- * Description: copy strings
- *
- * Return: pointer to destination
- */
- void str_cpy(char *src, char *dest)
- {
-         char *cp;
 
-	 cp = dest;
-         if (src == NULL)
-		  return;
-	 while (*src != '\0')
-         }
-		 *cp = *src;
-                 cp++;
-		 src++;                                                                                             }												}
-	 *cp = '\0';
-/**
- * new_dog -function create new dog
- * @name: new dogs name
- * @age: new dog age
- * @owner: new dog owner
- *
- * Description: create new dog
- *
- * Return: pointer to new dog object
- */
-dog_t *new_dog(char *name, float age, char *owner)
-{
-        dog_t *dog;
-	int lname, lowner;
-
-	if (name == NULL)
-	        lname = 0;
-        else
-		lname = str_len(name);
-        if (owner == NULL)
-	        lowner = 0;
-	else
-	        lowner = str_len(owner);
-	dog = malloc(sizeof(dog_t))
-	if (dog == NULL)
-		return (NULL);
-	(*dog).name = malloc(sizeof(char) * (lname + 1));
-	(*dog).owner = malloc(sizeof(char) * (lowner + 1));
-        if ((*dog).name == NULL || (*dog).owner == NULL)
-	
-	{
-		free((*dog).name);
-		free((*dog).owner);
-	        free(dog);
-		return (NULL);
-	}
-	str_cpy(name, (*dog).name);
-	(*dog).age = age;
-	str_cpy(owner, (*dog).owner);
-
-	return (dog);
+int main() {
+    // Create a new dog
+    dog_t *myDog = new_dog("Buddy", 3.5, "Alice");
+    
+    if (myDog != NULL) {
+        printf("Dog's name: %s\n", myDog->name);
+        printf("Dog's age: %.1f\n", myDog->age);
+        printf("Dog's owner: %s\n", myDog->owner);
+        
+        // Don't forget to free the memory when done with the dog
+        free(myDog->name);
+        free(myDog->owner);
+        free(myDog);
+    } else {
+        printf("Failed to create a new dog.\n");
+    }
+    
+    return 0;
 }
