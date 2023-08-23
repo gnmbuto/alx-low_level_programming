@@ -1,8 +1,16 @@
-#include <stdio.h>
+#include "main.h"
 #include <stdlib.h>
-#include <main.h>
-
 /**
- *void *malloc_checked - func checks if memory allocation has been done
- *
- *
+ * malloc_checked -allocates memory using malloc
+ * @b: bytes allocate
+ * Return: pointer
+ */
+void *malloc_checked(unsigned int b)
+{
+	char *ptr;
+
+	ptr = malloc(b);
+	if (ptr == NULL)
+		exit(98);
+	return (ptr);
+}
