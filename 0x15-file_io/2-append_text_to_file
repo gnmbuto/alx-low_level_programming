@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int append_text_to_file(const char *filename, char *text_content) {
+    if (filename == NULL) {
+        return -1; // Return -1 if the filename is NULL
+    }
+
+    if (text_content == NULL) {
+        return 1; // Return 1 if text_content is NULL (nothing to add)
+    }
+
+    FILE *file = fopen(filename, "a"); // Open the file in "append" mode
+    if (file == NULL) {
+        return -1; // Return -1 if the file cannot be opened
+    }
+
+    // Write the text_content to the end of the file
+    size_t bytes_written = fwrite(text_content, 1, strlen(text_content), file);
+
+    if (bytes_written != strlen(text_content)) {
+        fclose(file);
+        return -1; // Return -1 if there was an error writing to the file
+    }
+
+    fclose(file);
+    return 1; // Return 1 on success
+}
+
+int main() {
+    const char *filename = "example.txt";
+    char *text_content = "This is some text to append.";
+
+    int result = append_text_to_file(filename, text_content);
+
+    if (result == 1) {
+        printf("Text appended successfully.\n");
+    } else if (result == -1) {
+        printf("Error: Unable to append text.\n");
+    }
+
+    return 0;
+}
